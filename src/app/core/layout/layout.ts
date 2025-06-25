@@ -1,9 +1,15 @@
 import { Component } from '@angular/core';
+import {Sidebar} from './sidebar/sidebar';
+import {Topbar} from './topbar/topbar';
 
 @Component({
   selector: 'app-layout',
-  imports: [],
+  imports: [
+    Sidebar,
+    Topbar
+  ],
   templateUrl: './layout.html',
+  standalone: true,
   styleUrl: './layout.css'
 })
 export class Layout {
