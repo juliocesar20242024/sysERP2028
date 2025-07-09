@@ -7,10 +7,10 @@ import {Compras} from './features/components/compras/compras';
 import {Admin} from './features/components/admin/admin';
 import {Factura} from './features/components/factura/factura';
 import {Inventario} from './features/components/inventario/inventario';
+import {Sidebar} from './core/layout/sidebar/sidebar';
 
 export const routes: Routes = [
-  { path: '', component: Home },
-
+  { path: '', component:Home },
   { path: 'login', component: Login },
   { path: 'dashboard', component: Dashboard },
   { path: 'compras', component: Compras  },

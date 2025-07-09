@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Sidebar} from '../../../core/layout/sidebar/sidebar';
 import {RouterOutlet} from '@angular/router';
 
@@ -6,6 +6,7 @@ import {RouterOutlet} from '@angular/router';
   selector: 'app-home',
   imports: [
     Sidebar
+
   ],
   templateUrl: './home.html',
   standalone: true,
@@ -19,6 +20,7 @@ export class Home {
     {id: 4, name: '3000'},
     {id: 5, name: '4000'}
   ]
+  @Input() bussines? : number
 
   leyenda: string = "Home";
   getLeyenda():string {

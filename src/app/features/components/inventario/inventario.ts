@@ -4,7 +4,7 @@ import {Sidebar} from '../../../core/layout/sidebar/sidebar';
 @Component({
   selector: 'app-inventario',
   imports: [
-    Sidebar
+
   ],
   templateUrl: './inventario.html',
   standalone: true,

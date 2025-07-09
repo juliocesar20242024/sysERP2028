@@ -4,7 +4,7 @@ import {Sidebar} from '../../../core/layout/sidebar/sidebar';
 @Component({
   selector: 'app-ventas',
   imports: [
-    Sidebar
+
   ],
   templateUrl: './ventas.html',
   standalone: true,

@@ -4,7 +4,7 @@ import {Sidebar} from '../../../core/layout/sidebar/sidebar';
 @Component({
   selector: 'app-factura',
   imports: [
-    Sidebar
+
   ],
   templateUrl: './factura.html',
   standalone: true,

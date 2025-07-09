@@ -4,7 +4,7 @@ import {Sidebar} from '../../../core/layout/sidebar/sidebar';
 @Component({
   selector: 'app-cotizaciones',
   imports: [
-    Sidebar
+
   ],
   templateUrl: './cotizaciones.html',
   standalone: true,

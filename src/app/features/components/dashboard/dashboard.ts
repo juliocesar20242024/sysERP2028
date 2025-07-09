@@ -1,17 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {Sidebar} from '../../../core/layout/sidebar/sidebar';
+import {RouterLink} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
   imports: [
+    RouterLink,
     Sidebar
+
   ],
   templateUrl: './dashboard.html',
   standalone: true,
   styleUrl: './dashboard.css'
 })
 export class Dashboard {
-
+  @Input() bussines!: number;
   minPrice = [
     {id: 1, name: '500'},
     {id: 2, name: '1000'},
@@ -25,6 +28,7 @@ export class Dashboard {
   }
 
   leyenda: string = "Dashboard";
+
   getLeyenda():string {
     return  this.leyenda;
   }
