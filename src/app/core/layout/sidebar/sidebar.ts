@@ -8,7 +8,8 @@ import {Dashboard} from '../../../features/components/dashboard/dashboard';
 import {Cotizaciones} from '../../../features/components/cotizaciones/cotizaciones';
 import {Factura} from '../../../features/components/factura/factura';
 import {Inventario} from '../../../features/components/inventario/inventario';
-import {IUsarbolModel} from '../../models/usarbol-model';
+import {UsarbolModel} from '../../models/usarbol-model';
+import {UserArbolService} from '../../services/userarbol.services';
 
 @Component({
   selector: 'app-sidebar',
@@ -20,16 +21,10 @@ import {IUsarbolModel} from '../../models/usarbol-model';
 export class Sidebar implements
   OnInit, AfterViewInit {
 
-  user: IUsarbolModel;
+  userArbol: UsarbolModel[] =[];
 
-  constructor(private router: Router) {
- this.user = {
-        id: 1,
-        name: "data",
-        email :"data@example.com",
-        text:"",
-        url:"",
- }
+  constructor(private dataService: UserArbolService) {
+
   }
 
   @Input() childMessage?: string
@@ -41,5 +36,12 @@ export class Sidebar implements
   }
 
   ngOnInit(): void {
-      }
+  this.dataService.getUserArbol("victormx").subscribe(data =>
+    {
+       this.userArbol = data;
+       console.log(data);
+    });
+  }
+
+
 }
