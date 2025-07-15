@@ -11,11 +11,32 @@ import {HttpClient, HttpResponse} from '@angular/common/http';
 export class UserArbolService {
 constructor(private http: HttpClient) {
 }
-  private userarbols : Subject<UsarbolModel[]> = new Subject();
+
 
   getUserArbol(user: string ): Observable<UsarbolModel[]>{
-  user = "victomx";
-    return this.http.get<UsarbolModel[]>(`${enviroment.apiUrl}/api/V1/GetUsuarioArbol/user`)
+    const body = {
+      Email: 'victorm',
+      Password: "123456789"
+    };
+  user = "victorm";
+    return this.http.get<UsarbolModel[]>('http://localhost:5012/api/V1/GetUsuarioArbol',{
+       params:  {
+         email: "victorm",
+         Password: "123"
+
+       }
+      });
+
+/*
+    return this.http.get<any>(`api/V1/GetUsuario`, {
+      params: {
+        email: email
+      }
+    });
+    */
+
+
   }
+
 }
 

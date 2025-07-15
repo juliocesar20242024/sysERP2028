@@ -21,7 +21,7 @@ import {UserArbolService} from '../../services/userarbol.services';
 export class Sidebar implements
   OnInit, AfterViewInit {
 
-  userArbol: UsarbolModel[] =[];
+  userArbol!:UsarbolModel[];
 
   constructor(private dataService: UserArbolService) {
 
