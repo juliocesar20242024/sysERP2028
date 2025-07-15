@@ -40,6 +40,7 @@ export class Sidebar implements
     {
        this.userArbol = data;
        console.log(data);
+      console.log(data);
     });
   }
 
