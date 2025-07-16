@@ -36,12 +36,13 @@ export class Sidebar implements
   }
 
   ngOnInit(): void {
-  this.dataService.getUserArbol("victormx").subscribe(data =>
-    {
-       this.userArbol = data;
-       console.log(data);
-      console.log(data);
-    });
+
+      this.dataService.getUserArbol("victormx").subscribe(data => {
+        this.userArbol = data;
+        console.log(this.userArbol);
+
+      });
+
   }
 
 
