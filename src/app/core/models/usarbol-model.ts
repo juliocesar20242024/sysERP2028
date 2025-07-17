@@ -4,11 +4,11 @@
 export interface IUsarbolModel {
   contador?: number ;
   UsNumero?: number ;
-  nodo?: string;
-  MdModulo?: number;
-  AbPadre?: string;
+  abNodo?: string;
+  mdModulo?: string | undefined;
+  abPadre?: string;
   abDescripcion?: string;
-  AbLlave?:number;
+  abLlave?:string | undefined;
   AbIcono?:string,
   abUrl?:string
 }
@@ -17,11 +17,11 @@ export class UsarbolModel implements IUsarbolModel  {
 
   contador?: number ;
   UsNumero?: number ;
-  nodo: string | undefined;
-  MdModulo: number | undefined;
-  AbPadre: string | undefined;
+  abNodo: string | undefined;
+  mdModulo: string  | undefined;
+  abPadre: string | undefined;
   abDescripcion: string | undefined ;
-  AbLlave: number | undefined;
+  abLlave: string  | undefined;
   AbIcono?:string;
   abUrl?: string;
 
