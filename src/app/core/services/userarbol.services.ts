@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable, of, Subject} from 'rxjs';
+import {Observable, of, Subject,map} from 'rxjs';
 import {IUsarbolModel, UsarbolModel} from '../models/usarbol-model';
 import { enviroment } from '../enviroments/enviroment';
 
@@ -25,7 +25,23 @@ constructor(private http: HttpClient) {
          Password: "123"
 
        }
-      });
+      }).pipe(
+        map(response   => response
+          .map( item => ({
+            ...item,
+              abDescripcion:
+                item.abDescripcion?.replace(/\s+/g, ''),
+            abNodo:
+                item.abNodo?.replace(/\s+/g, ''),
+            abPadre:
+                item.abPadre?.replace(/\s+/g, ''),
+            mdModulo:
+              item.mdModulo?.replace(/\s+/g, ''),
+            abLlave:
+              item.abLlave?.replace(/\s+/g, ''),
+          }))
+        )
+    );
 
 /*
     return this.http.get<any>(`api/V1/GetUsuario`, {
